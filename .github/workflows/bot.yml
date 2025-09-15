@@ -3,7 +3,7 @@ name: Run Telegram Bot
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */5 * * *"   # প্রতি 5 ঘন্টা পর restart হবে
+    - cron: "0 */5 * * *"   # প্রতি 5 ঘন্টা পর restart
 
 jobs:
   run-bot:
@@ -26,5 +26,5 @@ jobs:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           OWNER_ID: ${{ secrets.OWNER_ID }}
           DEFAULT_CHANNEL: ${{ secrets.DEFAULT_CHANNEL }}
-          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+          GDRIVE_JSON: ${{ secrets.GDRIVE_JSON }}
         run: python bot.py
